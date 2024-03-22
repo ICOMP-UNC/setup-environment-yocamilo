@@ -7,7 +7,7 @@ cmake_policy(SET CMP0048 NEW)
 #   Define our project.
 project(
     "First_Program"
-    VERSION 1.2.0
+    VERSION 1.2.1
     DESCRIPTION "CMake C Project Template for OS II"
     LANGUAGES C
 )

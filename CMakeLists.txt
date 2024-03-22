@@ -7,7 +7,7 @@ cmake_policy(SET CMP0048 NEW)
 #   Define our project.
 project(
     "First_Program"
-    VERSION 1.0.0
+    VERSION 1.1.0
     DESCRIPTION "CMake C Project Template for OS II"
     LANGUAGES C
 )
@@ -23,3 +23,11 @@ file(GLOB_RECURSE SOURCES "src/*.c")
 
 #   Create the executable
 add_executable(${PROJECT_NAME} ${SOURCES})
+
+add_subdirectory(lib/libdyn)
+add_subdirectory(lib/libsta)
+
+target_include_directories(${PROJECT_NAME} PUBLIC lib/libdyn/include)
+target_include_directories(${PROJECT_NAME} PUBLIC lib/libsta/include)
+
+target_link_libraries(${PROJECT_NAME} StaticCLib DynamicCLib)
